@@ -1,0 +1,43 @@
+version: "3.8"
+
+services:
+  mc-server:
+    image: itzg/minecraft-server:latest
+    container_name: mc-server
+    ports:
+      - 25565:25565
+      - 24454:24454
+    environment:
+      SERVER_NAME: "Neezy Modded Server"
+      MOTD: "Forge Minecraft Server"
+      EULA: "TRUE"
+      TYPE: "FORGE"
+      VERSION: "1.19.2"
+      FORGE_VERSION: "43.2.1"
+      MODE: "survival"
+      MEMORY: "10G"
+      LEVEL_TYPE: "DEFAULT"
+      ENABLE_RCON: "true"
+      RCON_PASSWORD: password
+      RCON_PORT: 28016
+      SERVER_PORT: 25565
+      ENABLE_WHITELIST: "true"
+      WHITELIST: "${WHITELISTED_PLAYERS}"
+      OPS: "${OPS_PLAYERS}"
+      MAX_PLAYERS: 20
+      ANNOUNCE_PLAYER_ACHIEVEMENTS: "true"
+      SPAWN_ANIMALS: "true"
+      SPAWN_MONSTERS: "true"
+      PVP: "true"
+      LEVEL: "world"
+      GUI: "FALSE"
+      MODS_FILE: /extras/mods.txt
+      REMOVE_OLD_MODS: "true"
+    restart: unless-stopped
+    volumes:
+      - ./data:/data
+      - ./mods.txt:/extras/mods.txt:ro
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "1m"
