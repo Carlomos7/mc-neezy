@@ -7,7 +7,7 @@ import bisect
 
 class DownloadMods:
 
-    def getJarFiles(arg):
+    def getJarFiles(arg, headers):
         links=[]
         with open(arg,'r', encoding='utf8') as f:
             data= json.load(f)
@@ -15,7 +15,7 @@ class DownloadMods:
                 modId = str(entry["projectID"])
                 fileId = str(entry["fileID"])
                 url = Constants.apiEndpoint+'/v1/mods/'+modId+'/files/'+fileId
-                response = requests.get(url, headers=Constants.headers)
+                response = requests.get(url, headers=headers)
                 response = response.json()
                 if(response["data"]["downloadUrl"] != None):
                     jarLink = str(response["data"]["downloadUrl"]).replace(" ", "%20")
