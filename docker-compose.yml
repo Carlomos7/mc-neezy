@@ -15,7 +15,7 @@ services:
       VERSION: "1.19.2"
       FORGE_VERSION: "43.2.1"
       MODE: "survival"
-      MEMORY: "10G"
+      MEMORY: "23G"
       LEVEL_TYPE: "DEFAULT"
       ENABLE_RCON: "true"
       RCON_PASSWORD: password
