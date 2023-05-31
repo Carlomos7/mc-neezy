@@ -34,6 +34,7 @@ services:
       MODS_FILE: /extras/mods.txt
       REMOVE_OLD_MODS: "true"
     restart: unless-stopped
+    user: "${UID}:${GID}"
     volumes:
       - ./data:/data
       - ./mods.txt:/extras/mods.txt:ro
