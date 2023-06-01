@@ -9,7 +9,7 @@ services:
       - 24454:24454/udp
     environment:
       SERVER_NAME: "Neezy Modded Server"
-      MOTD: "Forge Minecraft Server"
+      MOTD: "§dKyle's Horrible World"
       EULA: "TRUE"
       TYPE: "FORGE"
       VERSION: "1.19.2"
