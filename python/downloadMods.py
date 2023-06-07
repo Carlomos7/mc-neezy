@@ -24,6 +24,24 @@ class DownloadMods:
         with open('jarLinks.txt', 'w') as f:
             f.write('\n'.join(links))
             
+    def test(filename, headers):
+        ids=[]
+        with open(filename, 'r', encoding='utf8') as f:
+            data= json.load(f)
+            for entry in data:
+                bisect.insort_left(ids, entry["projectID"])
+        url=Constants.apiEndpoint+'/v1/mods/'
+        response=requests.get(url,headers)
+        print(response.raise_for_status())
+        response=response.json()
+        
+        links=[]
+        if(response["data"]["downloadUrl"]!= None):
+            jarLink= str(response["data"]["downloadUrl"]).replace(" ", "%20")
+            bisect.insort_left(links, jarLink)
+        f.close()
+        with open('test.txt', 'w') as f:
+            f.write('\n'.join(links))
     
     def getJarLinks(arg):
         with open(arg, 'r', encoding='utf8') as f:
