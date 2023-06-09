@@ -154,3 +154,4 @@ https://edge.forgecdn.net/files/4525/646/FarmersDelight-1.19-1.2.1.jar
 https://edge.forgecdn.net/files/4399/930/Beyond-Earth-Giselle-Addon-1.19.2-3.0.jar
 https://edge.forgecdn.net/files/4282/385/alexsdelight-1.4.1.jar
 https://edge.forgecdn.net/files/4558/958/Nullscape_1.19.3_v1.2.1a.jar
+https://edge.forgecdn.net/files/3971/576/NethersDelight-1.19-3.0.jar
